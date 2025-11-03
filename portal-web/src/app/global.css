@@ -1,10 +1,44 @@
 /* Ruta: portal-web/src/app/global.css */
 
+/* 1. Directivas base de Tailwind CSS. Siempre deben estar al principio. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Opcional: Podemos añadir estilos base para todo el cuerpo si es necesario */
-body {
-  @apply bg-white text-gray-800; /* Un fondo blanco y texto oscuro por defecto */
+/* 2. Estilos base para la etiqueta <html>. */
+@layer base {
+  html {
+    /* Habilita el desplazamiento suave y elegante al hacer clic en los enlaces de ancla. */
+    scroll-behavior: smooth;
+  }
+
+  /* 3. Estilos base para el <body>, núcleo del theming claro/oscuro. */
+  body {
+    /*
+      - Aplica el color de fondo por defecto para el tema claro.
+      - Aplica el color de fondo para el tema oscuro usando el prefijo 'dark:'.
+      - Aplica un color de texto base para una buena legibilidad.
+      - Añade una transición suave a los colores para que el cambio de tema no sea abrupto.
+      - `antialiased` mejora la renderización y legibilidad de las fuentes.
+    */
+    @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 transition-colors duration-300 ease-in-out antialiased;
+  }
+
+  /* 4. Tipografía global para encabezados. */
+  h1, h2, h3, h4, h5, h6 {
+    /*
+      - Aplica nuestra fuente personalizada 'font-heading' (Montserrat) a todos los títulos.
+      - Establece el color de texto para los títulos en ambos temas.
+    */
+    @apply font-heading text-gray-900 dark:text-white;
+  }
+
+  /*
+    5. Mejora de Accesibilidad: Anillo de enfoque global.
+    Esto asegura que los usuarios que navegan con el teclado siempre vean
+    un indicador claro y consistente de dónde se encuentran.
+  */
+  :focus-visible {
+    @apply outline-none ring-2 ring-offset-2 ring-blue-500 dark:ring-blue-400 dark:ring-offset-gray-900;
+  }
 }

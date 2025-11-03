@@ -1,6 +1,6 @@
 // Ruta: portal-web/src/components/home/InfoSection.tsx
-'use client'; 
-import { InfoCard } from './InfoCard';
+'use client';
+import { InfoCard } from '../abogados/InfoCard';
 
 /**
  * Componente de sección que muestra una cuadrícula de tres InfoCards.

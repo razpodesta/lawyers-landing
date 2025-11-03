@@ -1,4 +1,0 @@
-{
-  "buildCommand": "pnpm nx build portal-web",
-  "outputDirectory": "dist/portal-web/.next"
-}

@@ -5,6 +5,7 @@ Una landing page de alta conversión construida con Next.js, Tailwind CSS y un e
 Este no es solo un sitio web, es un embudo de conversión diseñado para guiar a potenciales clientes desde la incertidumbre hasta el contacto.
 
 🧠 Embudo de Conversión Psicológico: La estructura de la página está diseñada para generar empatía, construir autoridad, educar al usuario y facilitar el contacto, respondiendo a las necesidades emocionales de una persona que ha sufrido un accidente.
+
 🗺️ Ultra Foco en SEO Local: Implementado para dominar los resultados de búsqueda locales.
 Schema Markup (JSON-LD): Esquemas Attorney y LocalBusiness para que Google entienda perfectamente el servicio y la ubicación.
 Contenido Optimizado: Textos y metadatos enfocados en palabras clave geolocalizadas.
