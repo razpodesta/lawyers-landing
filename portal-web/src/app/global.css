@@ -1,0 +1,10 @@
+/* Ruta: portal-web/src/app/global.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Opcional: Podemos añadir estilos base para todo el cuerpo si es necesario */
+body {
+  @apply bg-white text-gray-800; /* Un fondo blanco y texto oscuro por defecto */
+}
