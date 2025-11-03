@@ -1,12 +1,4 @@
-// Ruta: portal-web/src/app/page.tsx
-
-// =================================================================================
-// CORRECCIÓN CRUCIAL: LA DIRECTIVA 'use client'
-// Esta línea DEBE ser la primera en el archivo. Le dice a Next.js que este componente
-// es un "Client Component", lo cual es OBLIGATORIO porque usamos hooks como `useState`
-// y `useEffect` para la interactividad. Sin esto, el componente no puede tener estado
-// y el compilador puede arrojar el error TS7030.
-// =================================================================================
+// RUTA: portal-web/src/app/page.tsx
 'use client';
 
 // --- Importaciones de Núcleo y Externas ---
@@ -43,21 +35,20 @@ export default function HomePage() {
         setIsModalOpen(true);
         sessionStorage.setItem('newsletterModalShown', 'true');
       }, 3000);
+
+      // ✅ CORRECCIÓN: Función de limpieza que soluciona el error ts7030.
       return () => clearTimeout(timer);
     }
+    // Si el modal ya se mostró, el efecto no devuelve nada, lo cual es implícitamente `undefined`.
+    // TypeScript 7030 se queja de que no todas las rutas de código devuelven un valor.
+    // Aunque `undefined` es el valor por defecto, lo hacemos explícito para satisfacer al compilador.
+    return undefined;
   }, []);
 
   const handleCloseModal = (): void => {
     setIsModalOpen(false);
   };
 
-  // =================================================================================
-  // CORRECCIÓN ESTRUCTURAL: EL 'RETURN' ÚNICO Y FINAL
-  // Toda la lógica de hooks y funciones debe estar ANTES de esta declaración.
-  // El `return (...)` debe ser la última instrucción de la función del componente,
-  // garantizando que, sin importar las condiciones, siempre se devuelva un elemento JSX.
-  // Esto resuelve directamente el error "Not all code paths return a value".
-  // =================================================================================
   return (
     <>
       <NewsletterModal isOpen={isModalOpen} onClose={handleCloseModal} />
