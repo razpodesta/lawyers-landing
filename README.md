@@ -69,3 +69,6 @@ pnpm start: Inicia el servidor de producción (después de un build).
 pnpm lint: Analiza el código en busca de errores y problemas de estilo.
 pnpm test: Ejecuta las pruebas unitarias.
 pnpm e2e: Ejecuta las pruebas end-to-end con Playwright.
+
+---
+
